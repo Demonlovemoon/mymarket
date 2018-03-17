@@ -1,0 +1,6 @@
+  <scroll-view>
+    <image src='../../images/timg.jpeg'></image>
+    <view class='nobuy'>
+     <text>购物车空空如也</text>
+    </view>
+  </scroll-view>

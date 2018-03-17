@@ -1,13 +1,43 @@
 {
   "pages":[
+    "pages/market/market",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/market/market"
+    "pages/cart/cart",
+    "pages/mine/mine"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "希希的商城",
     "navigationBarTextStyle":"black"
+  },
+  "tabBar":{
+    "backgroundColor": "white",
+    "select-color": "#BF8600",
+    "border-style":"white",
+    "color":"black",
+    "position":"bottom",
+    "list":[
+      {
+        "pagePath":"pages/index/index",
+        "iconPath":"images/muying.png",
+        "text":"首页",
+        "selectedIconPath":"images/jingxuan.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "iconPath": "images/nvzhuang.png",
+        "text": "购物车",
+        "selectedIconPath": "images/jingxuan.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "iconPath": "images/nanzhuang.png",
+        "text": "我的",
+        "selectedIconPath": "images/jingxuan.png"
+      }
+    ]
+
   }
 }

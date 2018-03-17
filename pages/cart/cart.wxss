@@ -1,0 +1,9 @@
+/* pages/cart/cart.wxss */
+.nobuy{
+   display: flex;
+   justify-content: center
+}
+
+.nobuy text{
+  margin-top: 200rpx
+}

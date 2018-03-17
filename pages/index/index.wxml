@@ -1,13 +1,48 @@
-<!--index.wxml-->
-<view class="container" style='background-image:url("../../images/index_b.png")'>
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+<scroll-view>
+  <swiper style='height:410rpx' indicator-dots='true' autoplay='true' interval='2000' duration='1000'>
+    <block wx:for= "{{slides}}" wx:for-item="slide" wx:key= "id">
+      <swiper-item>
+        <navigator url="{{slide.url}}">
+           <image class="slide-img" src="{{slide.img}}" mode="aspectFit" />
+        </navigator>
+      </swiper-item>
     </block>
+  </swiper>
+
+  <view class='navs'>
+     <block wx:for-items="{{navs}}" wx:keys="name">
+        <view class='nav-item' catchtap='catchTapCategory' data-type="{{item.name}}" data-typeid="{{item.typeId}}">
+        <image src="{{item.icon}}" class='nav-image' />
+        <text>{{item.name}}</text>
+        </view>
+     </block>
   </view>
-  <view class="usermotto">
-    <text class="user-motto" bindtouchend="getMarket" >{{motto}}</text>
+  <view class="seperate"></view>
+
+  <view class='cate-container'>
+     <view class='category-title'>
+       <view class='icon'>
+       <image  src='../../images/jingxuan.png'></image>
+       </view>
+       <view>
+       <text class=''>精选商品</text>
+       </view>
+     </view>
   </view>
-</view>
+  <view class="seperate"></view>
+
+    <view class="seperate"></view>
+
+  <view class='cate-container'>
+     <view class='category-title'>
+       <view class='icon'>
+       <image  src='../../images/nvzhuang.png'></image>
+       </view>
+       <view>
+       <text class=''>热销商品</text>
+       </view>
+     </view>
+  </view>
+  <view class="seperate"></view>
+
+</scroll-view>

@@ -52,7 +52,6 @@ Page({
     })
   },
   getMarket: function(e) {
-    console.log(e)
     wx.switchTab({ url: '../index/index' })
   }
 })

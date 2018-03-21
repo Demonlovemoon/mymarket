@@ -26,7 +26,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    var that = this
+    var product = app.globalData.production
+    this.setData({productionType: product.typeName, productionId: product.typeId})
+    
   },
 
   /**

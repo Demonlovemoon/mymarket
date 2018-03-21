@@ -1,4 +1,5 @@
 // pages/product/product.js
+const Product = require("../../utils/products.js")
 Page({
 
   /**
@@ -26,10 +27,24 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    //储存下来当前的对象
     var that = this
     var product = app.globalData.production
     this.setData({productionType: product.typeName, productionId: product.typeId})
-    
+    Product.getProducts(that.data.productionId,function(result){
+      var data = getApp().store.sync(result.data)
+      that.setData({items: data })
+      wx.setStorage({
+        key: 'pro_${that.data.productionId}',
+        data: data,
+      })
+    }),function(fail){
+      var data = wx.getStorage({
+        key: 'pro_${that.data.productionId}',
+        success: function(res) {},
+      })
+      wx.setData({items: data})
+    }
   },
 
   /**
